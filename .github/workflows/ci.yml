@@ -40,12 +40,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - distro:
-            - centos8
-            - fedora33
-            - ubuntu1804
-            - debian10
+        distro:
+          - centos8
+          - fedora33
+          - ubuntu1804
+          - debian10
 
     steps:
       - name: Check out the codebase.
