@@ -2,5 +2,6 @@
 *.retry
 */__pycache__
 .cache
+.env*
 .venv
 venv

@@ -6,3 +6,12 @@ ansible_install_method: package
 
 # Used only if ansible_install_method is 'pip'. If empty, defaults to latest.
 ansible_install_version_pip: ''
+
+python_executable: python
+python_install_method: package
+python_install_versions: []
+
+virtualenv_install_method: bootstrap
+virtualenv_dir: "{{ home }}/opt/venv"
+
+pip_install_packages: ['virtualenv']

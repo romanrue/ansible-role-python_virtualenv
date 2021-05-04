@@ -1,4 +1,4 @@
-# Ansible Role: Ansible
+# Ansible Role: python_virtualenv
 
 [![CI](https://github.com/romanrue/ansible-role-python_virtualenv/workflows/CI/badge.svg?event=push)](https://github.com/romanrue/ansible-role-python_virtualenv/actions?query=workflow%3ACI)
 

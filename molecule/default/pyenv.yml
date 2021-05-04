@@ -4,8 +4,8 @@
   become: true
 
   vars:
-    ansible_install_method: pip
-    ansible_install_version_pip: "2.6.2"
+    python_install_method: pyenv
+    python_install_versions: ['python3.9', 'conda']
 
   roles:
     - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"

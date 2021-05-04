@@ -1,0 +1,13 @@
+---
+- name: Add deadsnakes repository.
+  apt_repository:
+    repo: 'ppa:deadsnakes'
+    update_cache: true
+  when: python_install_method == 'package'
+
+- name: Ensure python3 is installed
+  apt:
+    name: "{{ index }}"
+    state: "{{ python_package_state }}"
+  loop: "{{ python_versions }}"
+  when: python_install_method == 'package'
