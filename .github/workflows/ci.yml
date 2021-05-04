@@ -6,11 +6,11 @@ name: CI
     branches:
       - master
   schedule:
-    - cron: "30 5 * * 0"
+    - cron: "0 4 * * 5"
 
 defaults:
   run:
-    working-directory: 'geerlingguy.ansible'
+    working-directory: 'romanrue.python_virtualenv'
 
 jobs:
 
@@ -21,7 +21,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'geerlingguy.ansible'
+          path: 'romanrue.python_virtualenv'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -41,25 +41,17 @@ jobs:
     strategy:
       matrix:
         include:
-          - distro: centos8
-            playbook: converge.yml
-          - distro: fedora33
-            playbook: converge.yml
-          # See: https://github.com/geerlingguy/ansible-role-ansible/issues/18
-          # - distro: ubuntu2004
-          #   playbook: converge.yml
-          - distro: ubuntu1804
-            playbook: converge.yml
-          - distro: debian10
-            playbook: converge.yml
-          - distro: centos8
-            playbook: pip.yml
+          - distro:
+            - centos8
+            - fedora33
+            - ubuntu1804
+            - debian10
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'geerlingguy.ansible'
+          path: 'romanrue.python_virtualenv'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
