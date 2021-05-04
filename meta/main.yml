@@ -2,9 +2,8 @@
 dependencies: []
 
 galaxy_info:
-  author: geerlingguy
-  description: Ansible for RedHat/CentOS/Debian/Ubuntu.
-  company: "Midwestern Mac, LLC"
+  author: romanrue
+  description: Python with bootstrapped virtualenv.
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:
@@ -25,5 +24,7 @@ galaxy_info:
     - packaging
     - development
     - cloud
-    - ansible
+    - python
+    - virtualenv
     - automation
+    - tools
