@@ -9,4 +9,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: romanrue.python_virtualenv
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"

@@ -8,5 +8,4 @@
     ansible_install_version_pip: "2.6.2"
 
   roles:
-    - role: geerlingguy.pip
-    - role: geerlingguy.ansible
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"

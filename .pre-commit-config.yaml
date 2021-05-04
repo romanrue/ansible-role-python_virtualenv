@@ -1,0 +1,30 @@
+---
+default_language_version:
+  python: python
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.3.0
+    hooks:
+      - id: file-contents-sorter
+        files: ^\.gitignore$
+      - id: requirements-txt-fixer
+        files: requirements.txt
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.26.1
+    hooks:
+      - id: yamllint
+        files: \.(yaml|yml)$
+        types: [file, yaml]
+        entry: yamllint --strict
+  - repo: https://github.com/ansible-community/ansible-lint
+    rev: v5.0.0
+    hooks:
+      - id: ansible-lint
+        always_run: true
+        pass_filenames: false
+        verbose: true
+        entry: ansible-lint --force-color -p -v .
+        additional_dependencies:
+          - 'ansible<2.10'
